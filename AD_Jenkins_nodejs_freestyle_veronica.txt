@@ -1,0 +1,99 @@
+package ad_jenkins_auto_test;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class Ad_Jenkins {
+public static void main(String[] args) throws InterruptedException {
+		
+		
+		System.getProperty("webdriver.chrome.driver");
+		WebDriver driver = new ChromeDriver();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+		
+		
+		driver.get("http://127.0.0.1:8080");
+        
+	    driver.findElement(By.id("username")).sendKeys("jeya.veronica@agilitydelivered.com");
+		driver.findElement(By.id("password")).sendKeys("veronicaonline*1"+Keys.ENTER);
+		//Personal Folder Veronica -not working
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
+		
+		//*[@id="job_b74ede2b7e400766484360b656651871c2f731358eea37f81513dff6cef61d8e"]/td[3]/a/span
+		
+		//*[@id="job_Personal Folder Veronica"]/td[3]/a/span
+		
+	//	driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[2]/div[2]/div[3]/div[11]/a[1]/div[2]/p[1]")).click();
+		driver.findElement(By.xpath("//*[@id='job_Personal Folder Veronica']/td[3]/a/span")).click();
+		driver.findElement(By.xpath("//*[@id=\'job_nodejs_freestyle_veronica']/td[3]/a/span")).click();
+		driver.findElement(By.linkText("Configure")).click();
+	
+		
+		//git
+		driver.findElement(By.xpath("//*[@id=\'main-panel\']/form/div[1]/section[2]/div[3]/div[3]/div[2]/div[2]"
+				+ "/div/div[1]/div/div[1]/div[2]/input\r\n")).clear();
+		driver.findElement(By.xpath("//*[@id=\'main-panel\']/form/div[1]/section[2]/div[3]/div[3]/div[2]/div[2]"
+				+ "/div/div[1]/div/div[1]/div[2]/input\r\n")).sendKeys("https://github.com/ravdy/test-nodejs-app.git");
+		
+		
+		//credential
+	//	WebElement credentialdropdown=driver.findElement(By.xpath("//*[@id=\'main-panel\']/form/div[1]/section[2]/div[3]/div[3]/div[2]/div[2]"
+	//		+ "/div/div[1]/div/div[2]/div[2]/div/div/div[1]/select"));
+	//	Select select = new Select(credentialdropdown);
+	//	select.selectByValue("credential_user2");	
+	 driver.findElement(By.xpath(".//option[@value = 'credential_user2']")).click();	
+		//xpath: .//option[@value = "credential_user2"]
+		
+		
+		
+		//master branch
+		driver.findElement(By.xpath("//*[@id=\"main-panel\"]/form/div[1]/section[2]/div[3]/div[3]/div[3]/"
+				+ "div[2]/div/div[1]/div/div/div[2]/input")).clear();
+		driver.findElement(By.xpath("//*[@id=\"main-panel\"]/form/div[1]/section[2]/div[3]/div[3]/div[3]/"
+				+ "div[2]/div/div[1]/div/div/div[2]/input")).sendKeys("main");			
+		
+		
+		
+		//save -working
+		driver.findElement(By.xpath("//*[@name='Submit']")).click();
+		//Build Now
+		driver.findElement(By.xpath("//*[@id=\'tasks\']/div[4]/span/a/span[1]")).click();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//*[@id="main-panel"]/form/div[1]/section[5]/div[2]/div/div/div[2]/button
+		
+		//Actions act=new Actions(driver);
+		//act.moveToElement(driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[2]/form[1]/div[1]/section[5]/div[2]/div[1]/div[1]/div[2]/button[1]"))).build().perform();
+		
+		//inside 
+		
+		// New Item
+	//	driver.findElement(By.linkText("New Item")).click();
+	//	driver.findElement(By.id("name")).sendKeys("Folder_new");
+	//	driver.findElement(By.xpath("//*[@id=\"j-add-item-type-standalone-projects\"]/ul/li[1]/div[1]")).click();
+		//driver.findElement(By.xpath("//*[@id=\"j-add-item-type-nested-projects\"]/ul/li[1]/div[1]")).click();
+	//	driver.findElement(By.id("//*[@id='ok-button']")).click();
+		
+//*[@id="j-add-item-type-standalone-projects"]/ul/li[1]/div[1]		
+		
+		
+		
+		
+}
+}
